@@ -1,6 +1,6 @@
 const express= require('express');
 const router = express.Router();
-const path=require(path);
+const path=require('path');
 
 const Course = require('../../db').Course;
 const Batch = require('../../db').Batch;
@@ -11,7 +11,7 @@ const Student= require('../../db').Student;
 
 const Sequelize = require('sequelize');
 const Op=Sequelize.Op;
-const StudentBatchMap=require('../../db.StudentBatchMap');
+const StudentBatchMap=require('../../db').StudentBatchMap;
 // const courseRoutes= require('.api/routes/courses');
 
 //for displaying all courses
@@ -108,12 +108,12 @@ router.post('/',(req,res,next)=>{
     res.send({
         success:true
     })
-})
+
     res.status(201).json({
         message:'POST request to /courses',
         createdCourse:course
     });
-
+});
  
 // router.get('/:courseId', (req, res, next) => {
   

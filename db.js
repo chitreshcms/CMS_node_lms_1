@@ -7,7 +7,7 @@ const DB = new Sequelize('Dbname', 'root', 'root', {
         min: 0,
         max: 5
     },
-    storage: './dataBase.sqlite'
+    storage: 'dataBase.sqlite'
 })
 
 /**
