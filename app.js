@@ -7,6 +7,8 @@ const courseRoutes= require('./api/routes/courses');
 const subjectRoutes= require('./api/routes/subjects');
 const teacherRoutes= require('./api/routes/teachers');
 const studentRoutes= require('./api/routes/students');
+const batchRoutes = require('./api/routes/batches');
+const lectureRoutes= require('./api/routes/lectures');
 
 //morgan - error logging
 app.use(morgan('dev'));
@@ -30,6 +32,8 @@ app.use('/courses',courseRoutes);
 app.use('/subjects',subjectRoutes);
 app.use('/teachers',teacherRoutes);
 app.use('/students',studentRoutes);
+app.use('batches',batchRoutes);
+app.use('lectures',lectureRoutes);
 
 app.use((req,res,next)=>{
     const error= new Error("NOT FOUND!");

@@ -1,5 +1,12 @@
 const express= require('express');
 const router = express.Router();
+const path = require('path')
+
+const Subject = require('../../db').Subject
+const SubjectTeacherMap = require('../../db').SubjectTeacherMap
+const Teacher = require('../../db').Teacher
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 
 // const subjectRoutes= require('.api/routes/subjects');
 
@@ -28,7 +35,7 @@ router.get('/:subjectId', (req, res, next) => {
     }
 });
 
-router.patch('/:subjectId', (req, res, next) => {
+router.put('/:subjectId', (req, res, next) => {
     res.status(200).json({
         message: 'Updated subject!'
     });
